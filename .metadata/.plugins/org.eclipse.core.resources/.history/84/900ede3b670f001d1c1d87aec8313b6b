@@ -1,0 +1,23 @@
+package com.cgi.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.cgi.model.Student;
+import com.cgi.repository.StudentRepository;
+
+@Service
+public class StudentService {
+	
+	@Autowired
+	private StudentRepository sr;
+	
+	@Autowired
+	private RestTemplate rt;
+	
+	public Student save(Student s) {
+		return this.sr.save(s);
+	}
+
+}
